@@ -3,6 +3,7 @@
   --mainColor: #5100ad;
   --mainColorAlt: #4b009b;
   --AltBackgroundColor: #ECECEC;
+  --BackgroundColorSection: #e1e1e1;
   --mainTransition: 0.4s;
   --mainPaddingTop: 100px;
   --mainPaddingBottom: 100px;
@@ -305,6 +306,7 @@ a {
     margin: 0 auto 75px;
     padding: 10px 20px;
     border: 2px solid black;
+    border-radius: 6px;
     width: fit-content;
     font-size: 30px;
     position: relative;
@@ -897,6 +899,9 @@ a {
     background-color: var(--AltBackgroundColor);
     position: relative;
   }
+  .work .main-title:hover {
+    border-color: var(--AltBackgroundColor);
+  }
   .work .container {
     display: flex;
     align-items: center;
@@ -1119,6 +1124,210 @@ a {
     background-color: var(--mainColorAlt);
   }
 /* End Events */
+/* Start Pricing */
+  .pricing {
+    padding-top: var(--mainPaddingTop);
+    padding-bottom: var(--mainPaddingBottom);
+    background-color: var(--AltBackgroundColor);
+    position: relative;
+  }
+  .pricing .main-title:hover {
+    border-color: var(--AltBackgroundColor);
+  }
+  .pricing .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 35px;
+  }
+  .pricing .box {
+    background-color: white;
+    text-align: center;
+    -webkit-box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    -moz-box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    z-index: 1;
+    position: relative;
+    transition: var(--mainTransition);
+  }
+  .pricing .box::before,
+  .pricing .box::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 50%;
+    background-color: #f6f6f6;
+    z-index: -1;
+    transition: var(--mainTransition);
+  }
+  .pricing .box::before {
+    left: 0;
+    top: 0;
+  }
+  .pricing .box::after {
+    right: 0;
+    bottom: 0;
+  }
+  .pricing .box:hover::before,
+  .pricing .box:hover::after {
+    width: 100%;
+  }
+  @media (min-width: 682px) and (max-width: 1199px) {
+    .pricing .container .box:nth-child(3){
+      position: relative;
+      left: 50%;
+    }
+    }
+  @media (min-width: 1200px) {
+    .pricing .box.pop {
+      top: -20px;
+    }
+  }
+  .pricing .box.pop .bar {
+    position: absolute;
+    background-color: var(--mainColor);
+    color: white;
+    text-transform: capitalize;
+    writing-mode: vertical-rl;
+    padding: 10px 10px 35px;
+    right: 25px;
+    width: 40px;
+    font-weight: bold;
+    font-size: 19px;
+  }
+  .pricing .box.pop .bar::before {
+    content: "";
+    position: absolute;
+    border-color: transparent transparent white transparent;
+    border-width: 20px;
+    border-style: solid;
+    right: 0;
+    bottom: 0;
+    transition: 0.25s;
+  }
+  .pricing .box.pop:hover .bar::before {
+    border-color: transparent transparent #f6f6f6 transparent;
+  }
+  .pricing .box .title {
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px 0;
+    letter-spacing: -1px;
+  }
+  .pricing .box img {
+    width: 80px;
+    margin-bottom: 25px;
+  }
+  .pricing .box .price {
+    margin-bottom: 25px;
+  }
+  .pricing .box .price span:first-of-type {
+    display: block;
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--mainColor);
+    margin-bottom: 5px;
+  }
+  .pricing .box .price span:last-of-type {
+    text-transform: capitalize;
+    color: #555;
+  }
+  .pricing .box ul {
+    text-align: left;
+  }
+  .pricing .box ul li {
+    border-top: 1px solid #ddd;
+    padding: 20px;
+    text-transform: capitalize;
+  }
+  .pricing .box ul li::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f00c";
+    font-weight: 900;
+    /* color: var(--mainColor); */
+    margin-right: 10px;
+  }
+  .pricing .box a {
+    display: block;
+    padding: 15px 20px;
+    border: 2px solid var(--mainColor);
+    width: fit-content;
+    color: var(--mainColor);
+    text-transform: capitalize;
+    font-weight: bold;
+    border-radius: 6px;
+    margin: 25px auto;
+    transition: var(--mainTransition);
+  }
+  .pricing .box a:hover {
+    background-color: var(--mainColorAlt);
+    color: white;
+  }
+/* End Pricing */
+/* Start Video */
+  .videos {
+    padding-top: var(--mainPaddingTop);
+    padding-bottom: var(--mainPaddingBottom);
+  }
+  .videos .section {
+    display: flex;
+    border: 1px solid #ddd;
+    background-color: #e2e2e2;
+  }
+  @media (max-width: 991px) {
+    .videos .section {
+      flex-direction: column-reverse;
+      align-content: center;
+    }
+  }
+  .videos .left-bar {
+    min-width: 295px;
+    background-color: white;
+  }
+  .videos .left-bar .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    text-transform: capitalize;
+    font-weight: 900;
+    background-color: #f4f4f4;
+  }
+  .videos .left-bar ul li {
+    padding: 20px;
+    border-top: 1px solid var(--BackgroundColorSection);
+    cursor: pointer;
+    transition: var(--mainTransition);
+  }
+  .videos .left-bar ul li:nth-child(2),
+  .videos .left-bar ul li:hover {
+    color: var(--mainColorAlt);
+    background-color: #fafafa;
+  }
+  .videos .left-bar ul li span {
+    display: block;
+    margin-top: 8px;
+    color: #444;
+  }
+  .videos .preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #e2e2e2;
+    position: relative;
+  }
+  .videos .preview img {
+    width: 100%;
+  }
+  .videos .preview .info{
+    text-transform: capitalize;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 6px;
+  }
+/* End Video */
 /* Start */
 /* Start Animation */
 @keyframes up-down {
@@ -1148,7 +1357,7 @@ a {
   }
   100% {
     left: 0;
-    border-radius: 0;
+    border-radius: 6px 0 0 6px;
     width: 55%;
     height: 100%;
   }
@@ -1161,7 +1370,7 @@ a {
   }
   100% {
     right: 0;
-    border-radius: 0;
+    border-radius: 0 6px 6px 0;
     width: 55%;
     height: 100%;
   }
