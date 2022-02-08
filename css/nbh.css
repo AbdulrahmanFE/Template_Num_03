@@ -302,6 +302,7 @@ a {
   }
 /* End Landing */
 /* Start Components */
+/* Start Main Title */
   .main-title {
     margin: 0 auto 75px;
     padding: 10px 20px;
@@ -344,12 +345,30 @@ a {
     z-index: -1;
     animation: right-fill 0.5s linear forwards;
   }
+/* End Main Title */
+/* Start Spikes Section */
+  .spikes {
+    position: relative;
+  }
+  .spikes::before {
+    content: "";
+    position: absolute;
+    /* background-color: var(--AltBackgroundColor); */
+    background-image: 
+    linear-gradient(135deg, white 25%, transparent 25%),
+    linear-gradient(225deg, white 25%, transparent 25%);
+    background-size: 40px 40px;
+    width: 100%;
+    height: 30px;
+    right: 0;
+    z-index: 1;
+  }
+/* End Spikes Section */
 /* End Components */
 /* Start Articles */
   .articles {
     padding-top: var(--mainPaddingTop);
     padding-bottom: var(--mainPaddingBottom);
-    position: relative;
   }
   .articles .container {
     display: grid;
@@ -409,7 +428,6 @@ a {
     padding-top: var(--mainPaddingTop);
     padding-bottom: var(--mainPaddingBottom);
     background-color: var(--AltBackgroundColor);
-    position: relative;
   }
   .gallery .main-title:hover {
     border-color: var(--AltBackgroundColor);
@@ -459,7 +477,6 @@ a {
     padding-top: var(--mainPaddingTop);
     padding-bottom: var(--mainPaddingBottom);
     background-color: white;
-    position: relative;
   }
   .features .container {
     display: grid;
@@ -600,7 +617,6 @@ a {
     padding-top: var(--mainPaddingTop);
     padding-bottom: var(--mainPaddingBottom);
     background-color: var(--AltBackgroundColor);
-    position: relative;
   }
   .testimonials .main-title:hover {
     border-color: var(--AltBackgroundColor);
@@ -650,7 +666,6 @@ a {
   .team {
     padding-top: var(--mainPaddingTop);
     padding-bottom: var(--mainPaddingBottom);
-    position: relative;
   }
   .team .container {
     display: grid;
@@ -751,7 +766,6 @@ a {
     padding-top: var(--mainPaddingTop);
     padding-bottom: var(--mainPaddingBottom);
     background-color: var(--AltBackgroundColor);
-    position: relative;
   }
   .services .main-title:hover {
     border-color: var(--AltBackgroundColor);
@@ -842,7 +856,6 @@ a {
   .our-skills {
     padding-top: var(--mainPaddingTop);
     padding-bottom: var(--mainPaddingBottom);
-    position: relative;
   }
   .our-skills .container {
     display: flex;
@@ -897,7 +910,6 @@ a {
     padding-top: var(--mainPaddingTop);
     padding-bottom: var(--mainPaddingBottom);
     background-color: var(--AltBackgroundColor);
-    position: relative;
   }
   .work .main-title:hover {
     border-color: var(--AltBackgroundColor);
@@ -984,7 +996,6 @@ a {
   .events {
     padding-top: var(--mainPaddingTop);
     padding-bottom: var(--mainPaddingBottom);
-    position: relative;
   }
   .events .container {
     display: flex;
@@ -1129,7 +1140,6 @@ a {
     padding-top: var(--mainPaddingTop);
     padding-bottom: var(--mainPaddingBottom);
     background-color: var(--AltBackgroundColor);
-    position: relative;
   }
   .pricing .main-title:hover {
     border-color: var(--AltBackgroundColor);
@@ -1342,7 +1352,7 @@ a {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(255 255 255 / 90%);
+    background-color: rgb(255 255 255 / 97%);
   }
   .stats h2 {
     position: relative;
@@ -1480,7 +1490,7 @@ a {
     margin: 25px auto;
     padding: 15px 20px;
     border: none;
-    border-bottom: 3px solid var(--mainColorAlt);
+    border-bottom: 3px solid #444;
     background-color: #191919;
     color: white;
     caret-color: white;
@@ -1573,9 +1583,29 @@ a {
     color: white;
   }
   .footer .box .text {
-    line-height: 2;
     color: #b9b9b9;
     margin-top: 10px;
+  }
+  .footer .box .text .elzero a {
+    font-weight: 900;
+    -webkit-text-fill-color: #191919;
+    -webkit-text-stroke: 1px #2196f3;
+    font-size: 30px;
+    width: fit-content;
+    position: relative;
+  }
+  .footer .box .text .elzero a::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    -webkit-text-fill-color: #2196f3;
+    width: 0;
+    overflow: hidden;
+    transition: 1s;
+  }
+  .footer .box .text .elzero a:hover::before {
+    width: 100%;
   }
   .footer .box .links li {
     padding: 15px 0;
@@ -1632,7 +1662,7 @@ a {
   .footer .box .line .info span {
     display: block;
   }
-  .footer .box.footer-gallery img{
+  .footer .box.footer-gallery a > img{
     width: 80px;
     border: 3px solid white;
     margin: 1px;
@@ -1647,7 +1677,7 @@ a {
   }
   .footer .copyright .heart {
     color: red;
-    font-size: 20px;
+    font-size: 17px;
   }
   .footer .copyright .copy {
     display: block;
